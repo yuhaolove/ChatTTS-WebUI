@@ -1,0 +1,3 @@
+gradio
+soundfile
+pygit2
