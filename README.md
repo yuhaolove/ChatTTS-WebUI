@@ -71,6 +71,7 @@ my_ai_project/
 ### One-click Installation Package on Windows
 1. **Download and run the installation script**:
    Click here to download the one-click installation package.
+   [Download](https://github.com/yuhaolove/ChatTTS-WebUI/releases/download/v1.0.0/ChatTTS-WebUI.zip)
    For first-time use, double-click or run `install.bat` in the command line. The installation will complete and directly start the webui.
    For subsequent use, just double-click `run_webui.bat`.
 

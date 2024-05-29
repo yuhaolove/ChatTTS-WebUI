@@ -73,7 +73,7 @@ my_ai_project/
 
 ### Windows下一键安装包模式
 1. **下载并运行安装脚本**：
-   点击此处下载 一键安装包
+   点击此处下载 一键安装包 [点击下载](https://github.com/yuhaolove/ChatTTS-WebUI/releases/download/v1.0.0/ChatTTS-WebUI.zip)
    首次使用请双击或在命令行中运行`install.bat`。安装完成后将直接启动webui
    后续的使用直接双击run_webui.bat即可
 
