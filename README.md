@@ -1,4 +1,3 @@
-```markdown
 # ChatTTS-WebUI
 
 [**English**](./README.md) | [**中文简体**](./README_CN.md)
@@ -115,13 +114,11 @@ If you find this project helpful, please consider giving some support. Your supp
 
 You can also scan the following QR codes to support:
 
-#### Alipay
-![Alipay QR Code](assets/alipay.png)
 
-#### WeChat Pay
-![WeChat Pay QR Code](assets/wechat.png)
+| Alipay | WeChat Pay |
+| ------ | -------- |
+| ![Alipay QR Code](assets/alipay.png) | ![WeChat Pay QR Code](assets/wechat.png) |
 
 ### Acknowledgments
 
 The names of all supporters (if willing to be public) will be recorded in the project's acknowledgment list. Thank you for your support!
-```

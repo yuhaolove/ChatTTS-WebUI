@@ -31,10 +31,14 @@ MANIFEST
 
 environment/
 models/*
-models/config/*
-models/asset/*
+!models/
+
 !models/config/
+models/config/*
+
 !models/asset/
+models/asset/*
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

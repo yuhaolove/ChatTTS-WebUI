@@ -118,11 +118,9 @@ python webui/main.py
 
 你也可以扫描以下二维码进行赞赏：
 
-#### 支付宝
-![支付宝二维码](assets/alipay.png)
-
-#### 微信支付
-![微信支付二维码](assets/wechat.png)
+| 支付宝 | 微信支付 |
+| ------ | -------- |
+| ![支付宝二维码](assets/alipay.png) | ![微信支付二维码](assets/wechat.png) |
 
 ### 感谢名单
 
