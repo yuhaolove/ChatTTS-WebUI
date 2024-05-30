@@ -3,8 +3,6 @@ import sys
 import subprocess
 import pygit2
 from datetime import datetime
-import shutil
-import filecmp
 
 def pull(repo, remote_name='origin', branch='main'):
     for remote in repo.remotes:
@@ -40,37 +38,42 @@ def pull(repo, remote_name='origin', branch='main'):
             else:
                 raise AssertionError('Unknown merge analysis result')
 
-pygit2.option(pygit2.GIT_OPT_SET_OWNER_VALIDATION, 0)
-repo_url = "https://github.com/2noise/ChatTTS.git"
-repo_path = "ChatTTS"
+def update_repo(repo_url, repo_path):
+    pygit2.option(pygit2.GIT_OPT_SET_OWNER_VALIDATION, 0)
 
-if not os.path.exists(repo_path):
-    print("Cloning ChatTTS repository...")
-    pygit2.clone_repository(repo_url, repo_path)
+    if not os.path.exists(repo_path):
+        print(f"Cloning {repo_url} repository...")
+        pygit2.clone_repository(repo_url, repo_path)
 
-repo = pygit2.Repository(repo_path)
-ident = pygit2.Signature('chattts_updater', 'chattts@updater.com')
-try:
-    print("Stashing current changes...")
-    repo.stash(ident)
-except KeyError:
-    print("Nothing to stash.")
-backup_branch_name = 'backup_branch_{}'.format(datetime.today().strftime('%Y-%m-%d_%H_%M_%S'))
-print("Creating backup branch: {}".format(backup_branch_name))
-try:
-    repo.branches.local.create(backup_branch_name, repo.head.peel())
-except:
-    pass
+    repo = pygit2.Repository(repo_path)
+    ident = pygit2.Signature('chattts_updater', 'chattts@updater.com')
+    try:
+        print("Stashing current changes...")
+        repo.stash(ident)
+    except KeyError:
+        print("Nothing to stash.")
+    backup_branch_name = 'backup_branch_{}'.format(datetime.today().strftime('%Y-%m-%d_%H_%M_%S'))
+    print(f"Creating backup branch: {backup_branch_name}")
+    try:
+        repo.branches.local.create(backup_branch_name, repo.head.peel())
+    except:
+        pass
 
-print("Checking out main branch...")
-branch = repo.lookup_branch('main')
-ref = repo.lookup_reference(branch.name)
-repo.checkout(ref)
+    print("Checking out main branch...")
+    branch = repo.lookup_branch('main')
+    ref = repo.lookup_reference(branch.name)
+    repo.checkout(ref)
 
-print("Pulling latest changes...")
-pull(repo)
+    print("Pulling latest changes...")
+    pull(repo)
 
-print("Installing dependencies...")
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', os.path.join(repo_path, 'requirements.txt')])
+    print("Installing dependencies...")
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', os.path.join(repo_path, 'requirements.txt')])
 
-print("Done!")
+    print("Done!")
+
+# 更新ChatTTS仓库
+update_repo("https://github.com/2noise/ChatTTS.git", "ChatTTS")
+
+# 更新ChatTTS-WebUI仓库
+update_repo("https://github.com/yuhaolove/ChatTTS-WebUI.git", "ChatTTS-WebUI")

@@ -14,7 +14,24 @@ chat = ChatTTS.Chat()
 
 # load models from local path or snapshot
 
-if os.path.exists('models') and os.path.exists('models/config') and os.path.exists('models/asset'):
+required_files = [
+    'models/asset/Decoder.pt',
+    'models/asset/DVAE.pt',
+    'models/asset/GPT.pt',
+    'models/asset/spk_stat.pt',
+    'models/asset/tokenizer.pt',
+    'models/asset/Vocos.pt',
+    'models/config/decoder.yaml',
+    'models/config/dvae.yaml',
+    'models/config/gpt.yaml',
+    'models/config/path.yaml',
+    'models/config/vocos.yaml'
+]
+
+# 检查所有文件是否存在
+all_files_exist = all(os.path.exists(file_path) for file_path in required_files)
+
+if all_files_exist:
     print('Load models from local path.')
     chat.load_models(source='local', local_path='models')
 else:

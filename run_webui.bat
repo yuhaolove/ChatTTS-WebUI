@@ -7,4 +7,7 @@ set "PATH=%cd%\environment\Scripts;%cd%\environment\Library\bin;%cd%\environment
 REM 运行webui下的main.py
 echo Running web UI...
 python webui\main.py
+
+
 pause
+

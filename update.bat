@@ -5,7 +5,7 @@ set "PATH=%cd%\environment\Scripts;%cd%\environment\Library\bin;%cd%\environment
 
 REM 检查并更新ChatTTS
 echo Checking and updating ChatTTS...
-python update_chattts.py
+python update.py
 
 REM 提示更新完成
 echo Update complete!

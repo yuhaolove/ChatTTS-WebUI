@@ -73,7 +73,7 @@ my_ai_project/
 
 ### Windows下一键安装包模式
 1. **下载并运行安装脚本**：
-   点击此处下载 一键安装包 [点击下载](https://github.com/yuhaolove/ChatTTS-WebUI/releases/download/v1.0.0/ChatTTS-WebUI.zip)
+   点击此处下载 一键安装包 [点击下载](https://github.com/yuhaolove/ChatTTS-WebUI/releases/download/v1.0.1/ChatTTS-WebUI_v1.0.1.zip)
    首次使用请双击或在命令行中运行`install.bat`。安装完成后将直接启动webui
    后续的使用直接双击run_webui.bat即可
 
@@ -106,7 +106,14 @@ python webui/main.py
    ```
 
 ## 注意事项
-- 确保你具有稳定的网络连接，以便下载依赖和克隆仓库。
+- 确保你具有稳定的网络连接，以便下载依赖和克隆仓库。大部分问题都是网络问题
+
+## 使用说明
+
+- 4G以上显存才能顺利运行此项目，N卡哦，其他没有测试
+- Mac下需要自行手动安装
+- 使用方法也非常简单，安装好，记得将模型文件放到models里，模型文件一般会自动下载，但是你网络不好的情况，请到 [模型下载地址](https://www.modelscope.cn/models/pzc163/chatTTS/files) 这里把模型文件都下载下来，然后放到models即可。
+- 服务运行后 直接访问 http://127.0.0.1:9527 即可
 
 ## 联系方式
 如果你有任何问题或需要帮助，请联系[浩哥聊AI]。
